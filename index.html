@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +9,13 @@
   /* ==========================
      HOMEPAGE ANIMATIONS ONLY
   ========================== */
+
+  body {
+    margin: 0;
+    background: #06101f;
+    color: white;
+    font-family: Arial, sans-serif;
+  }
 
   /* Fade-in + Slide-up */
   .fade-up {
@@ -46,9 +52,13 @@
     100% { box-shadow: 0 0 8px rgba(42,208,255,0.4); }
   }
 
-  /* Particle background */
+  /* ==========================
+     HERO BACKGROUND
+  ========================== */
+
   .home-particles {
     position: relative;
+    min-height: 100vh;
     overflow: hidden;
   }
 
@@ -56,15 +66,9 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: url('https://i.imgur.com/1ZQZ1bS.png');
+    background: url('background.jpg') center / cover no-repeat;
     opacity: 0.25;
-    animation: particleMove 14s linear infinite;
     z-index: 0;
-  }
-
-  @keyframes particleMove {
-    from { background-position: 0 0; }
-    to { background-position: 1000px 1000px; }
   }
 
   /* ==========================
@@ -91,29 +95,108 @@
     50% { border-color: transparent; }
   }
 
-  /* Quick navigation buttons */
-  .quick-nav {
-    margin-top: 40px;
+  /* ==========================
+     LAYOUT
+  ========================== */
+
+  header {
+    background: #0a162b;
+    padding: 20px 0;
+  }
+
+  .header-content {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+  }
+
+  .nav-list {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+
+  .nav-list a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .nav-list a.active {
+    color: #2ad0ff;
+  }
+
+  .home-flex {
+    max-width: 1200px;
+    margin: auto;
+    padding: 120px 20px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
     flex-wrap: wrap;
+  }
+
+  .home-text {
+    max-width: 600px;
+  }
+
+  .home-text h2 {
+    font-size: 3rem;
+    color: #2ad0ff;
+  }
+
+  .home-text h3 {
+    margin-top: 20px;
+    line-height: 1.5;
+  }
+
+  .avatar {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 3px solid #2ad0ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: #2ad0ff;
+  }
+
+  /* ==========================
+     QUICK NAV
+  ========================== */
+
+  .quick-nav {
+    width: 100%;
+    margin-top: 60px;
+    display: flex;
     justify-content: center;
     gap: 18px;
+    flex-wrap: wrap;
   }
 
   .quick-nav .btn {
     padding: 12px 24px;
-    font-size: 1rem;
     border-radius: 8px;
     background: linear-gradient(135deg, #2ad0ff, #478bff);
     color: #06101f;
     font-weight: 600;
     text-decoration: none;
-    transition: transform 0.3s, box-shadow 0.3s;
   }
 
-  .quick-nav .btn:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 0 15px rgba(42,208,255,0.7);
+  /* ==========================
+     SPOTIFY
+  ========================== */
+
+  .spotify-player {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #0a162b;
   }
   </style>
 </head>
@@ -121,7 +204,7 @@
 <body>
 
 <header>
-  <div class="container header-content">
+  <div class="header-content">
     <h1>PUTRA AZREN</h1>
     <nav class="fade-up" style="animation-delay:0.3s;">
       <ul class="nav-list">
@@ -137,25 +220,22 @@
   </div>
 </header>
 
-<section class="section home home-particles">
-  <div class="container home-flex" style="position:relative; z-index:1;">
+<section class="home-particles">
+  <div class="home-flex">
 
     <div class="home-text fade-up" style="animation-delay:0.6s;">
-      <h2>
-        <span class="typewriter">Hello, I'm Putra Azren</span>
-      </h2>
+      <h2><span class="typewriter">Hello, I'm Putra Azren</span></h2>
 
-      <h3 class="fade-up" style="animation-delay:3.0s;">
+      <h3 class="fade-up" style="animation-delay:3s;">
         Web Developer & Digital Archivist<br>
         Creating modern, structured, and meaningful web content.
       </h3>
     </div>
 
-    <div class="home-avatar fade-up" style="animation-delay:1.5s;">
+    <div class="fade-up" style="animation-delay:1.5s;">
       <div class="avatar float-avatar">PA</div>
     </div>
 
-    <!-- Quick Navigation -->
     <div class="quick-nav fade-up" style="animation-delay:4.5s;">
       <a href="about.html" class="btn btn-animate">About</a>
       <a href="education.html" class="btn btn-animate">Education</a>
@@ -172,11 +252,11 @@
   <iframe
     src="https://open.spotify.com/embed/track/3be9ACTxtcL6Zm4vJRUiPG"
     height="80"
+    width="100%"
     allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
   </iframe>
 </div>
 
 </body>
 </html>
-
 
