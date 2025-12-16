@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact | Putra Azren</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* SOCIAL LINKS */
+    .social-links {
+      display: flex;
+      gap: 20px;
+      margin-top: 20px;
+      justify-content: center;
+    }
+
+    .social-links a {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      background: #11172b;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.3s;
+    }
+
+    .social-links a img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .social-links a:hover {
+      transform: scale(1.15);
+      box-shadow: 0 0 12px #2ad0ff;
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="container header-content">
+    <h1 class="logo">PUTRA AZREN</h1>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="achievements.html">Achievements</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a class="active" href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- CONTACT SECTION -->
+<section class="section" id="contact">
+  <div class="container">
+    <h2>Contact</h2>
+
+    <div class="card">
+      <p>
+        Feel free to get in touch for collaboration, internship opportunities,
+        or any IT-related inquiries. Your message will be responded to
+        professionally.
+      </p>
+
+      <form action="#" method="post">
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="text" name="subject" placeholder="Subject" required>
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+
+      <!-- SOCIAL MEDIA LINKS WITH LOGOS -->
+      <div class="social-links">
+        <a href="https://wa.me/60146940525" target="_blank">
+          <img src="whatsapp.jpg" alt="WhatsApp">
+        </a>
+        <a href="https://www.instagram.com/putrazreynn" target="_blank">
+          <img src="ig.jpg" alt="Instagram">
+        </a>
+        <a href="https://www.tiktok.com/@unknownputra" target="_blank">
+          <img src="tiktok.jpg" alt="TikTok">
+        </a>
+        <p style="text-align:center; margin-top:10px; color:#e8eaf1;">: Or direct through social media</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2025 PUTRA AZREN ISHAK. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
