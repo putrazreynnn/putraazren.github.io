@@ -53,6 +53,25 @@
   }
 
   /* ==========================
+     HERO BACKGROUND
+  ========================== */
+
+  .home-particles {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+  }
+
+  .home-particles::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('background.jpg') center / cover no-repeat;
+    opacity: 0.25;
+    z-index: 0;
+  }
+
+  /* ==========================
      TYPEWRITER EFFECT
   ========================== */
 
@@ -169,13 +188,6 @@
     text-decoration: none;
   }
 
-   body {
-      font-family: "Inter", "Poppins", sans-serif;
-      background: url('background.jpg') center/cover fixed;
-      position: relative;
-      color: white;
-    }
-
   /* ==========================
      SPOTIFY
   ========================== */
@@ -247,4 +259,3 @@
 
 </body>
 </html>
-
