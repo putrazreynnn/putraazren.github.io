@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | Putra Azren</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ===========================================================
+       GALLERY LAYOUT (MATCH OTHER PAGES)
+    =========================================================== */
+    .gallery-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      padding: 50px 20px;
+    }
+
+    .gallery-item {
+      position: relative;
+      background: linear-gradient(145deg, #136386be, #0f152b);
+      border-radius: 15px;
+      border: 1px solid rgba(42, 208, 255, 0.18);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 0 20px rgba(0, 255, 200, 0.6);
+      background: #890808;
+      border-color: var(--accent);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-bottom: 2px solid rgba(42, 208, 255, 0.2);
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.95rem;
+      background: rgba(2, 6, 23, 0.75);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      color: #e8eaf1;
+    }
+
+    .gallery-item:hover .overlay {
+      opacity: 1;
+    }
+
+    /* LIGHTBOX */
+    #lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    #lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 12px;
+      border: 2px solid var(--accent);
+    }
+
+    /* SECTION TITLE */
+    .section h2 {
+      font-size: 2.3rem;
+      margin-bottom: 20px;
+      color: var(--accent);
+      letter-spacing: 0.6px;
+    }
+
+    .section p {
+      color: var(--text-muted);
+      margin-bottom: 35px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="container header-content">
+    <h1 class="logo">PUTRA AZREN</h1>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="achievements.html">Achievements</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- GALLERY SECTION -->
+<section class="section">
+  <div class="container">
+    <h2>Gallery</h2>
+    <p>Album of Putra Azren's experience and achievements.</p>
+
+    <div class="gallery-container">
+      <div class="gallery-item" onclick="openLightbox(this.querySelector('img').src)">
+        <img src="svg.jpg" alt="Picture 1">
+        <div class="overlay">Students High Council</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this.querySelector('img').src)">
+        <img src="krs.jpg" alt="Picture 2">
+        <div class="overlay">Kawad Kaki State Level</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this.querySelector('img').src)">
+        <img src="krs2.jpg" alt="Picture 3">
+        <div class="overlay">Kawad Kaki State Level</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this.querySelector('img').src)">
+        <img src="uni.jpg" alt="Photo 4">
+        <div class="overlay">Raffles University</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this.querySelector('img').src)">
+        <img src="photog.jpg" alt="Photo 5">
+        <div class="overlay">Photographer</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this.querySelector('img').src)">
+        <img src="internship.jpg" alt="Photo 6">
+        <div class="overlay">Internship Activity</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this.querySelector('img').src)">
+        <img src="high.jpg" alt="Photo 7">
+        <div class="overlay">Highschool Picture</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this.querySelector('img').src)">
+        <img src="kor.jpg" alt="Photo 8">
+        <div class="overlay">Perkom-Kor</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(this.querySelector('img').src)">
+        <img src="hehe.jpg" alt="Photo 9">
+        <div class="overlay">University Era</div>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO SECTION -->
+<section class="section">
+  <div class="container">
+    <h2>Video</h2>
+    <p>Best Moments Video.</p>
+
+    <div class="video-container" style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+      <!-- Video 1 -->
+      <div class="video-item" style="max-width: 600px; width: 100%;">
+        <video controls style="width: 100%; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.4); border: 1px solid rgba(42,208,255,0.18);">
+          <source src="video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p style="text-align:center; margin-top:10px; color:#e8eaf1;">Dean's List Awards</p>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img">
+</div>
+
+<div class="spotify-player">
+  <iframe src="https://open.spotify.com/embed/track/3be9ACTxtcL6Zm4vJRUiPG?utm_source=generator&autoplay=1" height="80"></iframe>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  &copy; 2025 Putra Azren. All Rights Reserved.
+</footer>
+
+<script>
+  function openLightbox(src) {
+    document.getElementById("lightbox").style.display = "flex";
+    document.getElementById("lightbox-img").src = src;
+  }
+  function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+  }
+</script>
+
+</body>
+</html>
