@@ -2,148 +2,132 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Experience | Putra Azren</title>
+  <title>Home | Putra Azren</title>
   <link rel="stylesheet" href="style.css">
+
   <style>
-    body {
-      font-family: "Inter", "Poppins", sans-serif;
-      background: url('background.jpg') center/cover fixed;
-      position: relative;
-      color: white;
+  /* ==========================
+     HOMEPAGE ANIMATIONS ONLY
+  ========================== */
+
+  /* Fade-in + Slide-up */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1s ease forwards;
+  }
+
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
+  }
 
-    .container {
-      width: 92%;
-      max-width: 1140px;
-      margin: auto;
-    }
+  /* Floating avatar */
+  .float-avatar {
+    animation: floatAnim 3.5s ease-in-out infinite;
+  }
 
-    header {
-      background: rgba(14, 20, 46, 0.75);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(42, 208, 255, 0.2);
-      position: sticky;
-      top: 0;
-      z-index: 999;
-      padding: 16px 0;
-    }
+  @keyframes floatAnim {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-14px); }
+  }
 
-    .header-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+  /* Button glow */
+  .btn-animate {
+    animation: glowPulse 2.5s infinite;
+  }
 
-    .logo {
-      color: #2ad0ff;
-      font-size: 1.6rem;
-      font-weight: 700;
-    }
+  @keyframes glowPulse {
+    0% { box-shadow: 0 0 8px rgba(42,208,255,0.4); }
+    50% { box-shadow: 0 0 18px rgba(42,208,255,0.9); }
+    100% { box-shadow: 0 0 8px rgba(42,208,255,0.4); }
+  }
 
-    .nav-list {
-      list-style: none;
-      display: flex;
-      gap: 28px;
-    }
+  /* Particle background */
+  .home-particles {
+    position: relative;
+    overflow: hidden;
+  }
 
-    .nav-list a {
-      text-decoration: none;
-      color: #e8eaf1;
-      font-weight: 500;
-    }
+  .home-particles::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('https://i.imgur.com/1ZQZ1bS.png');
+    opacity: 0.25;
+    animation: particleMove 14s linear infinite;
+    z-index: 0;
+  }
 
-    .nav-list a:hover,
-    .nav-list a.active {
-      color: #2ad0ff;
-      font-weight: 700;
-    }
+  @keyframes particleMove {
+    from { background-position: 0 0; }
+    to { background-position: 1000px 1000px; }
+  }
 
-    h2 {
-      font-size: 2.3rem;
-      margin-bottom: 26px;
-      color: #2ad0ff;
-    }
+  /* ==========================
+     TYPEWRITER EFFECT
+  ========================== */
 
-    /* ===========================================================
-       EXPERIENCE CARDS (SHOW DETAILS BY DEFAULT)
-    =========================================================== */
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-      margin-top: 30px;
-    }
+  .typewriter {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #2ad0ff;
+    width: 0;
+    animation:
+      typing 2.8s steps(24, end) forwards,
+      blink 0.7s step-end infinite;
+  }
 
-    .card {
-      background: linear-gradient(145deg, #136386be, #0f152b);
-      padding: 20px;
-      border-radius: 14px;
-      border: 1px solid rgba(42, 208, 255, 0.18);
-      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
-      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-    }
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
 
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 0 20px rgba(0, 255, 200, 0.6);
-      border-color: #2ad0ff;
-      background: #890808;
-    }
+  @keyframes blink {
+    50% { border-color: transparent; }
+  }
 
-    .card-title {
-      color: #2ad0ff;
-      font-weight: 700;
-      font-size: 1.1rem;
-      margin-bottom: 10px;
-    }
+  /* Quick navigation buttons */
+  .quick-nav {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+  }
 
-    .card-subtitle {
-      color: #9aa4b2;
-      font-size: 0.9rem;
-      margin-bottom: 12px;
-    }
+  .quick-nav .btn {
+    padding: 12px 24px;
+    font-size: 1rem;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #2ad0ff, #478bff);
+    color: #06101f;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
 
-    .card-description {
-      color: #e0f7ff;
-      line-height: 1.6;
-      font-size: 0.95rem;
-    }
-
-    .cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-  margin-top: 30px;
-  justify-content: center; /* center grid items in row */
-}
-
-.cards .card:last-child {
-  justify-self: center; /* center last card specifically */
-}
-
-
-    footer {
-      background: #060a18;
-      text-align: center;
-      padding: 30px 0;
-      border-top: 1px solid rgba(42, 208, 255, 0.15);
-      color: #9aa4b2;
-      font-size: 0.9rem;
-      margin-top: 40px;
-    }
+  .quick-nav .btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 15px rgba(42,208,255,0.7);
+  }
   </style>
 </head>
+
 <body>
 
 <header>
   <div class="container header-content">
-    <h1 class="logo">PUTRA AZREN</h1>
-    <nav>
+    <h1>PUTRA AZREN</h1>
+    <nav class="fade-up" style="animation-delay:0.3s;">
       <ul class="nav-list">
-        <li><a href="index.html">Home</a></li>
+        <li><a class="active" href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="education.html">Education</a></li>
-        <li><a href="experience.html" class="active">Experience</a></li>
+        <li><a href="experience.html">Experience</a></li>
         <li><a href="achievements.html">Achievements</a></li>
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -152,87 +136,231 @@
   </div>
 </header>
 
-<section class="section">
-  <div class="container">
-    <h2>Work Experience</h2>
+<section class="section home home-particles">
+  <div class="container home-flex" style="position:relative; z-index:1;">
 
-    <div class="cards">
+    <div class="home-text fade-up" style="animation-delay:0.6s;">
+      <h2>
+        <span class="typewriter">Hello, I'm Putra Azren</span>
+      </h2>
 
-      <div class="card">
-        <div class="card-title">Intern – Tiong Nam Logistic Solutions</div>
-        <div class="card-subtitle">2025</div>
-        <div class="card-description">
-          Assisted the IT Hardware Department with hardware and system maintenance, documentation, and equipment support.
-          <br><br>
-          Key tasks included:
-          <ul>
-            <li>Troubleshooting and repairing company computers and network devices.</li>
-            <li>Updating IT documentation and inventory tracking for hardware.</li>
-            <li>Assisting in system upgrades and network configurations.</li>
-            <li>Supporting staff with technical issues and equipment setup.</li>
-          </ul>
-        </div>
-      </div>
+      <h3 class="fade-up" style="animation-delay:3.0s;">
+        Web Developer & Digital Archivist<br>
+        Creating modern, structured, and meaningful web content.
+      </h3>
 
-      <div class="card">
-        <div class="card-title">Part Time – Legoland Cafe</div>
-        <div class="card-subtitle">2023</div>
-        <div class="card-description">
-          Worked as a part-time staff handling customer service and operations.
-          <br><br>
-          Key responsibilities:
-          <ul>
-            <li>Serving customers and taking orders efficiently.</li>
-            <li>Preparing food and beverages according to standards.</li>
-            <li>Maintaining cleanliness and organization of the café area.</li>
-            <li>Collaborating with team members to ensure smooth daily operations.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-title">Part Time – Pizza Hut Restaurant</div>
-        <div class="card-subtitle">2023 – Present</div>
-        <div class="card-description">
-          Engaged in customer service and kitchen support in a fast-paced restaurant environment.
-          <br><br>
-          Key responsibilities:
-          <ul>
-            <li>Taking customer orders accurately and promptly.</li>
-            <li>Preparing food and beverages to meet quality standards.</li>
-            <li>Maintaining hygiene and safety standards in the kitchen and dining area.</li>
-            <li>Enhancing teamwork and communication skills under pressure.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-title">Keytatoes Vendor (Event)</div>
-        <div class="card-subtitle">2024</div>
-        <div class="card-description">
-          Managed a booth for Keytatoes during events, ensuring smooth sales and customer engagement.
-          <br><br>
-          Key responsibilities:
-          <ul>
-            <li>Handling product sales and inventory at the booth.</li>
-            <li>Interacting with customers and providing product information.</li>
-            <li>Setting up and closing the booth efficiently.</li>
-            <li>Coordinating with team members to achieve successful event execution.</li>
-          </ul>
-        </div>
-      </div>
-
+      <a href="about.html"
+         class="btn btn-animate fade-up"
+         style="animation-delay:3.8s;">
+         Explore More !
+      </a>
     </div>
+
+    <div class="home-avatar fade-up" style="animation-delay:1.5s;">
+      <div class="avatar float-avatar">PA</div>
+    </div>
+
+    <!-- Quick Navigation -->
+    <div class="quick-nav fade-up" style="animation-delay:4.5s;">
+      <a href="about.html" class="btn btn-animate">About</a>
+      <a href="education.html" class="btn btn-animate">Education</a>
+      <a href="experience.html" class="btn btn-animate">Experience</a>
+      <a href="achievements.html" class="btn btn-animate">Achievements</a>
+      <a href="gallery.html" class="btn btn-animate">Gallery</a>
+      <a href="contact.html" class="btn btn-animate">Contact</a>
+    </div>
+
   </div>
 </section>
 
 <div class="spotify-player">
-  <iframe src="https://open.spotify.com/embed/track/3be9ACTxtcL6Zm4vJRUiPG?utm_source=generator&autoplay=1" height="80"></iframe>
+  <iframe
+    src="https://open.spotify.com/embed/track/3be9ACTxtcL6Zm4vJRUiPG"
+    height="80"
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+  </iframe>
 </div>
-
-<footer>
-  &copy; 2025 Putra Azren. All rights reserved.
-</footer>
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home | Putra Azren</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+  /* ==========================
+     HOMEPAGE ANIMATIONS ONLY
+  ========================== */
+
+  /* Fade-in + Slide-up */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1s ease forwards;
+  }
+
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Floating avatar */
+  .float-avatar {
+    animation: floatAnim 3.5s ease-in-out infinite;
+  }
+
+  @keyframes floatAnim {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-14px); }
+  }
+
+  /* Button glow */
+  .btn-animate {
+    animation: glowPulse 2.5s infinite;
+  }
+
+  @keyframes glowPulse {
+    0% { box-shadow: 0 0 8px rgba(42,208,255,0.4); }
+    50% { box-shadow: 0 0 18px rgba(42,208,255,0.9); }
+    100% { box-shadow: 0 0 8px rgba(42,208,255,0.4); }
+  }
+
+  /* Particle background */
+  .home-particles {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .home-particles::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('https://i.imgur.com/1ZQZ1bS.png');
+    opacity: 0.25;
+    animation: particleMove 14s linear infinite;
+    z-index: 0;
+  }
+
+  @keyframes particleMove {
+    from { background-position: 0 0; }
+    to { background-position: 1000px 1000px; }
+  }
+
+  /* ==========================
+     TYPEWRITER EFFECT
+  ========================== */
+
+  .typewriter {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #2ad0ff;
+    width: 0;
+    animation:
+      typing 2.8s steps(24, end) forwards,
+      blink 0.7s step-end infinite;
+  }
+
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
+  @keyframes blink {
+    50% { border-color: transparent; }
+  }
+
+  /* Quick navigation buttons */
+  .quick-nav {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+  }
+
+  .quick-nav .btn {
+    padding: 12px 24px;
+    font-size: 1rem;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #2ad0ff, #478bff);
+    color: #06101f;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .quick-nav .btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 15px rgba(42,208,255,0.7);
+  }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container header-content">
+    <h1>PUTRA AZREN</h1>
+    <nav class="fade-up" style="animation-delay:0.3s;">
+      <ul class="nav-list">
+        <li><a class="active" href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="achievements.html">Achievements</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="section home home-particles">
+  <div class="container home-flex" style="position:relative; z-index:1;">
+
+    <div class="home-text fade-up" style="animation-delay:0.6s;">
+      <h2>
+        <span class="typewriter">Hello, I'm Putra Azren</span>
+      </h2>
+
+      <h3 class="fade-up" style="animation-delay:3.0s;">
+        Web Developer & Digital Archivist<br>
+        Creating modern, structured, and meaningful web content.
+      </h3>
+    </div>
+
+    <div class="home-avatar fade-up" style="animation-delay:1.5s;">
+      <div class="avatar float-avatar">PA</div>
+    </div>
+
+    <!-- Quick Navigation -->
+    <div class="quick-nav fade-up" style="animation-delay:4.5s;">
+      <a href="about.html" class="btn btn-animate">About</a>
+      <a href="education.html" class="btn btn-animate">Education</a>
+      <a href="experience.html" class="btn btn-animate">Experience</a>
+      <a href="achievements.html" class="btn btn-animate">Achievements</a>
+      <a href="gallery.html" class="btn btn-animate">Gallery</a>
+      <a href="contact.html" class="btn btn-animate">Contact</a>
+    </div>
+
+  </div>
+</section>
+
+<div class="spotify-player">
+  <iframe
+    src="https://open.spotify.com/embed/track/3be9ACTxtcL6Zm4vJRUiPG"
+    height="80"
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+  </iframe>
+</div>
+
+</body>
+</html>
+
+
