@@ -41,6 +41,43 @@
       border-color: var(--accent);
     }
 
+    /* ===============================
+   EXPERIENCE CARD PHOTO FRAME
+   MATCH ACHIEVEMENTS STYLE
+================================ */
+
+.card-photo {
+  width: 100%;
+  height: 150px;                 /* SAME visual weight as Achievements */
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 16px;
+
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(0, 0, 0, 0.25)
+  );
+
+  border: 1px solid rgba(42, 208, 255, 0.25);
+  box-shadow: inset 0 0 18px rgba(0, 0, 0, 0.5);
+}
+
+/* Image inside frame */
+.card-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;          /* LOGO-STYLE like Achievements */
+  padding: 18px;
+  transition: transform 0.35s ease;
+}
+
+/* Slight zoom on hover (same feeling as Achievements) */
+.card:hover .card-photo img {
+  transform: scale(1.05);
+}
+
+
     /* SPOTIFY SAME POSITION & SPACE AS ACHIEVEMENTS */
     body {
       padding-bottom: 120px;
@@ -172,4 +209,5 @@
 
 </body>
 </html>
+
 
