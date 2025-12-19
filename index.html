@@ -76,28 +76,24 @@
   ========================== */
 
  .typewriter {
-  display: inline-block;
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: 2px solid #2ad0ff;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #2ad0ff;
+    width: 0;
+    animation:
+      typing 2.8s steps(24, end) forwards,
+      blink 0.7s step-end infinite;
+  }
 
-  /* IMPORTANT FIX */
-  width: 0;
-  animation:
-    typing 4.5s steps(45, end) forwards,
-    blink 0.75s step-end infinite;
-}
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
 
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-
-@keyframes blink {
-  from, to { border-color: transparent }
-  50% { border-color: #2ad0ff }
-}
-
+  @keyframes blink {
+    50% { border-color: transparent; }
+  }
   /* ==========================
      LAYOUT
   ========================== */
@@ -227,7 +223,7 @@
   <div class="home-flex">
 
     <div class="home-text fade-up" style="animation-delay:0.6s;">
-      <h2><span class="typewriter">Hello, Welcome to Azren's Personal Website</span></h2>
+      <h2><span class="typewriter">Azren's Personal Website</span></h2>
 
       <h3 class="fade-up" style="animation-delay:3s;">
         Web Developer & Digital Archivist<br>
