@@ -3,181 +3,180 @@
 <head>
   <meta charset="UTF-8">
   <title>Experience | Putra Azren</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    body {
-      font-family: "Inter", "Poppins", sans-serif;
-      background: url('background.jpg') center/cover fixed;
-      color: white;
+    /* ===============================
+       RESET
+    =============================== */
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    .container {
-      width: 92%;
-      max-width: 1140px;
-      margin: auto;
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #050a19 url("images/background.jpg") center / cover fixed;
+      color: #ffffff;
+      padding-bottom: 130px; /* Spotify space */
     }
 
-    /* ================= HEADER ================= */
+    /* ===============================
+       HEADER (MATCH ACHIEVEMENTS)
+    =============================== */
     header {
-      background: rgba(14, 20, 46, 0.75);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(42, 208, 255, 0.2);
-      position: sticky;
+      position: fixed;
       top: 0;
-      z-index: 999;
-      padding: 16px 0;
-    }
-
-    .header-content {
+      left: 0;
+      width: 100%;
+      height: 90px;
+      padding: 0 8%;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
+      background: linear-gradient(
+        to bottom,
+        rgba(5, 10, 25, 0.95),
+        rgba(5, 10, 25, 0.75)
+      );
+      backdrop-filter: blur(10px);
+      z-index: 1000;
     }
 
     .logo {
-      color: #2ad0ff;
-      font-size: 1.6rem;
+      font-size: 26px;
       font-weight: 700;
+      color: #4fd2ff;
+      letter-spacing: 1px;
     }
 
-    .nav-list {
+    nav ul {
       list-style: none;
       display: flex;
       gap: 28px;
-      padding: 0;
-      margin: 0;
     }
 
-    .nav-list a {
+    nav ul li a {
       text-decoration: none;
-      color: #e8eaf1;
-      font-weight: 500;
+      color: #e5ecf5;
+      font-size: 15px;
+      transition: color 0.3s ease;
     }
 
-    .nav-list a:hover,
-    .nav-list a.active {
-      color: #2ad0ff;
-      font-weight: 700;
+    nav ul li a:hover,
+    nav ul li a.active {
+      color: #4fd2ff;
     }
 
-    /* ================= SECTION ================= */
-    h2 {
-      font-size: 2.3rem;
-      margin: 40px 0 26px;
-      color: #2ad0ff;
+    /* ===============================
+       MAIN SECTION (SAME AS ACHIEVEMENTS)
+    =============================== */
+    .content-section {
+      padding: 150px 8% 120px;
     }
 
-    /* ================= CARDS ================= */
-    .cards {
+    .section-title {
+      font-size: 42px;
+      color: #4fd2ff;
+      margin-bottom: 60px;
+    }
+
+    /* ===============================
+       CARD GRID (IDENTICAL)
+    =============================== */
+    .cards-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-      margin-bottom: 40px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
     }
 
-    .card {
-      background: linear-gradient(145deg, #136386be, #0f152b);
-      padding: 20px;
+    .info-card {
+      background: linear-gradient(
+        135deg,
+        rgba(20, 40, 70, 0.75),
+        rgba(10, 25, 50, 0.85)
+      );
+      backdrop-filter: blur(12px);
+      border-radius: 22px;
+      padding: 30px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .info-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+    }
+
+    .card-logo {
+      width: 100%;
+      height: 140px;
+      object-fit: contain;
+      background: rgba(255, 255, 255, 0.08);
       border-radius: 16px;
-      border: 1px solid rgba(42, 208, 255, 0.18);
-      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
-      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+      padding: 20px;
+      margin-bottom: 22px;
     }
 
-    .card:hover {
-      transform: translateY(-8px) scale(1.02);
-      background: #890808;
-      box-shadow: 0 0 20px rgba(0, 255, 200, 0.6);
-    }
-
-    /* ================= PHOTO FRAME (UNCHANGED SIZE) ================= */
-    .card-photo {
-      width: 100%;
-      height: 180px;
-      margin-bottom: 14px;
-      border-radius: 12px;
-      overflow: hidden;
-      border: 2px solid rgba(42, 208, 255, 0.35);
-      box-shadow: 0 0 18px rgba(42, 208, 255, 0.25);
-      background: linear-gradient(135deg, #0f152b, #136386);
-    }
-
-    .card-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: brightness(0.9);
-      transition: transform 0.4s ease, filter 0.4s ease;
-    }
-
-    .card:hover .card-photo img {
-      transform: scale(1.05);
-      filter: brightness(1);
-    }
-
-    /* ================= TEXT ================= */
-    .card-title {
-      color: #2ad0ff;
-      font-weight: 700;
-      font-size: 1.1rem;
+    .info-card h3 {
+      font-size: 20px;
       margin-bottom: 6px;
     }
 
-    .card-subtitle {
-      color: #9aa4b2;
-      font-size: 0.9rem;
-      margin-bottom: 10px;
+    .card-year {
+      font-size: 14px;
+      color: #7ddfff;
+      display: block;
+      margin-bottom: 16px;
     }
 
-    .card-description {
-      color: #e0f7ff;
-      line-height: 1.6;
-      font-size: 0.95rem;
+    .info-card p {
+      color: #cfd8e3;
+      line-height: 1.7;
+      margin-bottom: 16px;
     }
 
-    .card-description ul {
+    .info-card ul {
       padding-left: 18px;
-      margin-top: 8px;
     }
 
-    .card-description li {
-      margin-bottom: 6px;
+    .info-card ul li {
+      color: #cfd8e3;
+      margin-bottom: 8px;
     }
 
-    /* ================= SPOTIFY (EDUCATION STYLE) ================= */
+    /* ===============================
+       SPOTIFY PLAYER
+    =============================== */
     .spotify-player {
-      margin: 40px auto 0;
-      max-width: 300px;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 90px;
+      background: #1c2a38;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      z-index: 999;
     }
 
     .spotify-player iframe {
-      width: 100%;
-      height: 80px;
-      border-radius: 12px;
       border: none;
-    }
-
-    /* ================= FOOTER ================= */
-    footer {
-      background: #060a18;
-      text-align: center;
-      padding: 30px 0;
-      border-top: 1px solid rgba(42, 208, 255, 0.15);
-      color: #9aa4b2;
-      font-size: 0.9rem;
-      margin-top: 40px;
+      width: 100%;
+      height: 100%;
     }
   </style>
 </head>
 
 <body>
 
-<header>
-  <div class="container header-content">
-    <h1 class="logo">PUTRA AZREN</h1>
+  <!-- HEADER -->
+  <header>
+    <div class="logo">PUTRA AZREN</div>
     <nav>
-      <ul class="nav-list">
+      <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="education.html">Education</a></li>
@@ -187,95 +186,69 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
-  </div>
-</header>
+  </header>
 
-<section>
-  <div class="container">
-    <h2>Work Experience</h2>
+  <!-- EXPERIENCE SECTION -->
+  <section class="content-section">
+    <h2 class="section-title">Work Experience</h2>
 
-    <div class="cards">
+    <div class="cards-grid">
 
-      <div class="card">
-        <div class="card-photo">
-          <img src="tiongnam.jpg" alt="Tiong Nam Internship">
-        </div>
-        <div class="card-title">Intern – Tiong Nam Logistic Solutions</div>
-        <div class="card-subtitle">2025</div>
-        <div class="card-description">
-          Assisted the IT Hardware Department with maintenance and support.
-          <ul>
-            <li>Troubleshooting computers and network devices</li>
-            <li>Updating IT inventory documentation</li>
-            <li>System upgrades and configuration</li>
-            <li>Technical support for staff</li>
-          </ul>
-        </div>
+      <div class="info-card">
+        <img src="images/tiong-nam.png" class="card-logo" alt="Tiong Nam">
+        <h3>Intern – Tiong Nam Logistic Solutions</h3>
+        <span class="card-year">2025</span>
+        <p>
+          Assisted the IT Hardware Department with maintenance, troubleshooting,
+          and technical support to ensure smooth daily operations.
+        </p>
+        <ul>
+          <li>Troubleshooting computers and network devices</li>
+          <li>Updating IT inventory documentation</li>
+          <li>System upgrades and configuration</li>
+          <li>Technical support for staff</li>
+        </ul>
       </div>
 
-      <div class="card">
-        <div class="card-photo">
-          <img src="legoland.jpg" alt="Legoland Cafe">
-        </div>
-        <div class="card-title">Part Time – Legoland Cafe</div>
-        <div class="card-subtitle">2023</div>
-        <div class="card-description">
-          Customer service and café operations.
-          <ul>
-            <li>Order handling</li>
-            <li>Food & beverage preparation</li>
-            <li>Cleanliness maintenance</li>
-            <li>Team collaboration</li>
-          </ul>
-        </div>
+      <div class="info-card">
+        <img src="images/legoland.png" class="card-logo" alt="Legoland">
+        <h3>Part Time – Legoland Café</h3>
+        <span class="card-year">2023</span>
+        <p>
+          Provided customer service and café operations in a fast-paced
+          theme park environment.
+        </p>
+        <ul>
+          <li>Order handling</li>
+          <li>Food and beverage preparation</li>
+          <li>Cleanliness maintenance</li>
+          <li>Team collaboration</li>
+        </ul>
       </div>
 
-      <div class="card">
-        <div class="card-photo">
-          <img src="pizza.jpg" alt="Pizza Hut">
-        </div>
-        <div class="card-title">Part Time – Pizza Hut</div>
-        <div class="card-subtitle">2023 – Present</div>
-        <div class="card-description">
-          Fast-paced restaurant operations.
-          <ul>
-            <li>Customer service</li>
-            <li>Kitchen support</li>
-            <li>Hygiene standards</li>
-            <li>Teamwork under pressure</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-photo">
-          <img src="keytatoes.jpg" alt="Keytatoes Event">
-        </div>
-        <div class="card-title">Keytatoes Vendor (Event)</div>
-        <div class="card-subtitle">2024</div>
-        <div class="card-description">
-          Event booth management.
-          <ul>
-            <li>Sales & inventory</li>
-            <li>Customer interaction</li>
-            <li>Booth setup</li>
-            <li>Event coordination</li>
-          </ul>
-        </div>
+      <div class="info-card">
+        <img src="images/pizzahut.png" class="card-logo" alt="Pizza Hut">
+        <h3>Part Time – Pizza Hut</h3>
+        <span class="card-year">2023 – Present</span>
+        <p>
+          Worked in a high-pressure restaurant environment while maintaining
+          service quality and hygiene standards.
+        </p>
+        <ul>
+          <li>Customer service</li>
+          <li>Kitchen support</li>
+          <li>Hygiene standards</li>
+          <li>Teamwork under pressure</li>
+        </ul>
       </div>
 
     </div>
+  </section>
 
-    <div class="spotify-player">
-      <iframe src="https://open.spotify.com/embed/track/3be9ACTxtcL6Zm4vJRUiPG?autoplay=1"></iframe>
-    </div>
-
+  <!-- SPOTIFY -->
+  <div class="spotify-player">
+    <iframe src="https://open.spotify.com/embed/track/6dOtVTDdiauQNBQEDOtlAB?utm_source=generator"></iframe>
   </div>
-</section>
-
-<footer>
-  &copy; 2025 Putra Azren. All rights reserved.
-</footer>
 
 </body>
 </html>
