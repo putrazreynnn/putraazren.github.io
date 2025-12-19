@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <title>Experience | Putra Azren</title>
-  <link rel="stylesheet" href="style.css">
+
   <style>
     body {
       font-family: "Inter", "Poppins", sans-serif;
       background: url('background.jpg') center/cover fixed;
-      position: relative;
       color: white;
+      margin: 0;
     }
 
     .container {
@@ -18,6 +18,7 @@
       margin: auto;
     }
 
+    /* ================= HEADER ================= */
     header {
       background: rgba(14, 20, 46, 0.75);
       backdrop-filter: blur(10px);
@@ -44,6 +45,8 @@
       list-style: none;
       display: flex;
       gap: 28px;
+      padding: 0;
+      margin: 0;
     }
 
     .nav-list a {
@@ -58,49 +61,72 @@
       font-weight: 700;
     }
 
+    /* ================= SECTION ================= */
     h2 {
       font-size: 2.3rem;
-      margin-bottom: 26px;
+      margin: 40px 0 26px;
       color: #2ad0ff;
     }
 
-    /* ===========================================================
-       EXPERIENCE CARDS (SHOW DETAILS BY DEFAULT)
-    =========================================================== */
+    /* ================= CARDS ================= */
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 25px;
-      margin-top: 30px;
+      margin-bottom: 40px;
     }
 
     .card {
       background: linear-gradient(145deg, #136386be, #0f152b);
       padding: 20px;
-      border-radius: 14px;
+      border-radius: 16px;
       border: 1px solid rgba(42, 208, 255, 0.18);
       box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
-      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 0 20px rgba(0, 255, 200, 0.6);
-      border-color: #2ad0ff;
-      background: #890808;
+      box-shadow: 0 0 22px rgba(42, 208, 255, 0.6);
     }
 
+    /* ================= PHOTO FRAME ================= */
+    .card-photo {
+      width: 100%;
+      height: 180px;
+      margin-bottom: 14px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 2px solid rgba(42, 208, 255, 0.35);
+      box-shadow: 0 0 18px rgba(42, 208, 255, 0.25);
+      background: linear-gradient(135deg, #0f152b, #136386);
+    }
+
+    .card-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.9);
+      transition: transform 0.4s ease, filter 0.4s ease;
+    }
+
+    .card:hover .card-photo img {
+      transform: scale(1.05);
+      filter: brightness(1);
+    }
+
+    /* ================= TEXT ================= */
     .card-title {
       color: #2ad0ff;
       font-weight: 700;
       font-size: 1.1rem;
-      margin-bottom: 10px;
+      margin-bottom: 6px;
     }
 
     .card-subtitle {
       color: #9aa4b2;
       font-size: 0.9rem;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .card-description {
@@ -109,19 +135,31 @@
       font-size: 0.95rem;
     }
 
-    .cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-  margin-top: 30px;
-  justify-content: center; /* center grid items in row */
-}
+    .card-description ul {
+      padding-left: 18px;
+      margin-top: 8px;
+    }
 
-.cards .card:last-child {
-  justify-self: center; /* center last card specifically */
-}
+    .card-description li {
+      margin-bottom: 6px;
+    }
 
+    /* ================= SPOTIFY ================= */
+    .spotify-player {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 300px;
+      z-index: 999;
+    }
 
+    .spotify-player iframe {
+      width: 100%;
+      border-radius: 12px;
+      border: none;
+    }
+
+    /* ================= FOOTER ================= */
     footer {
       background: #060a18;
       text-align: center;
@@ -129,10 +167,10 @@
       border-top: 1px solid rgba(42, 208, 255, 0.15);
       color: #9aa4b2;
       font-size: 0.9rem;
-      margin-top: 40px;
     }
   </style>
 </head>
+
 <body>
 
 <header>
@@ -152,90 +190,86 @@
   </div>
 </header>
 
-<section class="section">
+<section>
   <div class="container">
     <h2>Work Experience</h2>
 
     <div class="cards">
 
-     <div class="card">
-  <div class="card-photo">
-    <img src="tiongnam.jpg" alt="Tiong Nam Internship">
-  </div>
+      <div class="card">
+        <div class="card-photo">
+          <img src="tiongnam.jpg" alt="Tiong Nam Internship">
+        </div>
+        <div class="card-title">Intern – Tiong Nam Logistic Solutions</div>
+        <div class="card-subtitle">2025</div>
+        <div class="card-description">
+          Assisted the IT Hardware Department with maintenance and support.
+          <ul>
+            <li>Troubleshooting computers and network devices</li>
+            <li>Updating IT inventory documentation</li>
+            <li>System upgrades and configuration</li>
+            <li>Technical support for staff</li>
+          </ul>
+        </div>
+      </div>
 
-  <div class="card-title">Intern – Tiong Nam Logistic Solutions</div>
-  <div class="card-subtitle">2025</div>
-  <div class="card-description">
-    Assisted the IT Hardware Department with hardware and system maintenance, documentation, and equipment support.
-    <br><br>
-    Key tasks included:
-    <ul>
-      <li>Troubleshooting and repairing company computers and network devices.</li>
-      <li>Updating IT documentation and inventory tracking for hardware.</li>
-      <li>Assisting in system upgrades and network configurations.</li>
-      <li>Supporting staff with technical issues and equipment setup.</li>
-    </ul>
-  </div>
-</div>
+      <div class="card">
+        <div class="card-photo">
+          <img src="legoland.jpg" alt="Legoland Cafe">
+        </div>
+        <div class="card-title">Part Time – Legoland Cafe</div>
+        <div class="card-subtitle">2023</div>
+        <div class="card-description">
+          Customer service and café operations.
+          <ul>
+            <li>Order handling</li>
+            <li>Food & beverage preparation</li>
+            <li>Cleanliness maintenance</li>
+            <li>Team collaboration</li>
+          </ul>
+        </div>
+      </div>
 
+      <div class="card">
+        <div class="card-photo">
+          <img src="pizza.jpg" alt="Pizza Hut">
+        </div>
+        <div class="card-title">Part Time – Pizza Hut</div>
+        <div class="card-subtitle">2023 – Present</div>
+        <div class="card-description">
+          Fast-paced restaurant operations.
+          <ul>
+            <li>Customer service</li>
+            <li>Kitchen support</li>
+            <li>Hygiene standards</li>
+            <li>Teamwork under pressure</li>
+          </ul>
+        </div>
+      </div>
 
-  <div class="card">
-      <div class="card-photo">
-        <img src="legoland.jpg" alt="Legoland Cafe">
+      <div class="card">
+        <div class="card-photo">
+          <img src="keytatoes.jpg" alt="Keytatoes Event">
+        </div>
+        <div class="card-title">Keytatoes Vendor (Event)</div>
+        <div class="card-subtitle">2024</div>
+        <div class="card-description">
+          Event booth management.
+          <ul>
+            <li>Sales & inventory</li>
+            <li>Customer interaction</li>
+            <li>Booth setup</li>
+            <li>Event coordination</li>
+          </ul>
+        </div>
       </div>
-      <div class="card-title">Part Time – Legoland Cafe</div>
-      <div class="card-subtitle">2023</div>
-      <div class="card-description">
-        Provided customer service and handled café operations.
-        <ul>
-          <li>Customer service and order handling</li>
-          <li>Food and beverage preparation</li>
-          <li>Maintaining cleanliness</li>
-          <li>Team collaboration</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-photo">
-        <img src="pizza.jpg" alt="Pizza Hut">
-      </div>
-      <div class="card-title">Part Time – Pizza Hut</div>
-      <div class="card-subtitle">2023 – Present</div>
-      <div class="card-description">
-        Worked in a fast-paced restaurant environment.
-        <ul>
-          <li>Order taking and customer service</li>
-          <li>Kitchen and food preparation</li>
-          <li>Hygiene and safety standards</li>
-          <li>Teamwork under pressure</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-photo">
-        <img src="keytatoes.jpg" alt="Keytatoes Event">
-      </div>
-      <div class="card-title">Keytatoes Vendor (Event)</div>
-      <div class="card-subtitle">2024</div>
-      <div class="card-description">
-        Managed event booth operations and customer engagement.
-        <ul>
-          <li>Sales and inventory handling</li>
-          <li>Customer interaction</li>
-          <li>Booth setup and teardown</li>
-          <li>Event coordination</li>
-        </ul>
-      </div>
-    </div>
 
     </div>
   </div>
 </section>
 
 <div class="spotify-player">
-  <iframe src="https://open.spotify.com/embed/track/3be9ACTxtcL6Zm4vJRUiPG?utm_source=generator&autoplay=1" height="80"></iframe>
+  <iframe src="https://open.spotify.com/embed/track/3be9ACTxtcL6Zm4vJRUiPG?autoplay=1"></iframe>
 </div>
 
 <footer>
