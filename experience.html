@@ -82,15 +82,16 @@
       border-radius: 16px;
       border: 1px solid rgba(42, 208, 255, 0.18);
       box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
     }
 
     .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 0 22px rgba(42, 208, 255, 0.6);
+      transform: translateY(-8px) scale(1.02);
+      background: #890808;
+      box-shadow: 0 0 20px rgba(0, 255, 200, 0.6);
     }
 
-    /* ================= PHOTO FRAME ================= */
+    /* ================= PHOTO FRAME (UNCHANGED SIZE) ================= */
     .card-photo {
       width: 100%;
       height: 180px;
@@ -144,33 +145,15 @@
       margin-bottom: 6px;
     }
 
-    .card {
-  background: linear-gradient(145deg, #136386be, #0f152b);
-  padding: 20px;
-  border-radius: 14px;
-  border: 1px solid rgba(42, 208, 255, 0.18);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 0 20px rgba(0, 255, 200, 0.6);
-  background: #890808;
-}
-
-
-    /* ================= SPOTIFY ================= */
+    /* ================= SPOTIFY (EDUCATION STYLE) ================= */
     .spotify-player {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 300px;
-      z-index: 999;
+      margin: 40px auto 0;
+      max-width: 300px;
     }
 
     .spotify-player iframe {
       width: 100%;
+      height: 80px;
       border-radius: 12px;
       border: none;
     }
@@ -183,6 +166,7 @@
       border-top: 1px solid rgba(42, 208, 255, 0.15);
       color: #9aa4b2;
       font-size: 0.9rem;
+      margin-top: 40px;
     }
   </style>
 </head>
@@ -281,12 +265,13 @@
       </div>
 
     </div>
+
+    <div class="spotify-player">
+      <iframe src="https://open.spotify.com/embed/track/3be9ACTxtcL6Zm4vJRUiPG?autoplay=1"></iframe>
+    </div>
+
   </div>
 </section>
-
-<div class="spotify-player">
-  <iframe src="https://open.spotify.com/embed/track/3be9ACTxtcL6Zm4vJRUiPG?autoplay=1"></iframe>
-</div>
 
 <footer>
   &copy; 2025 Putra Azren. All rights reserved.
@@ -294,5 +279,3 @@
 
 </body>
 </html>
-
-   
