@@ -5,10 +5,7 @@
   <title>Experience | Putra Azren</title>
 
   <style>
-    /* ================= GLOBAL ================= */
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       font-family: "Inter", "Poppins", sans-serif;
@@ -17,12 +14,12 @@
       margin: 0;
     }
 
-    /* SOFT DARK OVERLAY (NOT TOO DARK) */
+    /* SOFT DARK OVERLAY */
     body::before {
       content: "";
       position: fixed;
       inset: 0;
-      background: rgba(12, 18, 40, 0.65);
+      background: rgba(12, 18, 40, 0.6);
       z-index: -1;
     }
 
@@ -32,7 +29,7 @@
       margin: auto;
     }
 
-    /* ================= HEADER ================= */
+    /* ===== HEADER ===== */
     header {
       background: rgba(14, 20, 46, 0.75);
       backdrop-filter: blur(10px);
@@ -75,14 +72,14 @@
       font-weight: 700;
     }
 
-    /* ================= SECTION ================= */
+    /* ===== SECTION ===== */
     h2 {
       font-size: 2.3rem;
       margin: 40px 0 26px;
       color: #2ad0ff;
     }
 
-    /* ================= CARDS ================= */
+    /* ===== CARDS ===== */
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -92,43 +89,73 @@
 
     .card {
       background: linear-gradient(145deg, #136386be, #0f152b);
-      padding: 26px;
+      padding: 22px;
       border-radius: 16px;
       border: 1px solid rgba(42, 208, 255, 0.18);
       box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
-      transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
+      transition: 0.35s ease;
       cursor: pointer;
     }
 
-    /* RED HOVER – SAME AS EDUCATION */
+    /* RED HOVER (MATCH EDUCATION) */
     .card:hover {
       transform: translateY(-8px) scale(1.02);
       box-shadow: 0 0 20px rgba(0, 255, 200, 0.6);
       background: #890808;
     }
 
-    /* ================= TEXT ================= */
-    .card h3 {
-      margin: 0 0 6px;
-      color: #2ad0ff;
-      font-size: 1.15rem;
-      font-weight: 700;
+    /* ===== PHOTO ===== */
+    .card-photo {
+      width: 100%;
+      height: 180px;
+      margin-bottom: 14px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 2px solid rgba(42, 208, 255, 0.35);
+      background: #0f152b;
     }
 
-    .card small {
-      display: block;
-      margin-bottom: 12px;
+    .card-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .card:hover .card-photo img {
+      transform: scale(1.06);
+    }
+
+    /* ===== TEXT ===== */
+    .card-title {
+      color: #2ad0ff;
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+    }
+
+    .card-subtitle {
       color: #b7c0d4;
       font-size: 0.85rem;
+      margin-bottom: 10px;
     }
 
-    .card p {
+    .card-description {
       color: #e0e6f2;
-      line-height: 1.65;
+      line-height: 1.6;
       font-size: 0.95rem;
     }
 
-    /* ================= SPOTIFY ================= */
+    .card-description ul {
+      padding-left: 18px;
+      margin-top: 8px;
+    }
+
+    .card-description li {
+      margin-bottom: 6px;
+    }
+
+    /* ===== SPOTIFY ===== */
     .spotify-player {
       position: fixed;
       bottom: 20px;
@@ -143,7 +170,7 @@
       border: none;
     }
 
-    /* ================= FOOTER ================= */
+    /* ===== FOOTER ===== */
     footer {
       background: rgba(10, 14, 30, 0.9);
       text-align: center;
@@ -181,49 +208,71 @@
     <div class="cards">
 
       <div class="card">
-        <h3>Students High Council</h3>
-        <small>2023</small>
-        <p>
-          Actively served as a member of the Students High Council, contributing to planning,
-          coordination, and execution of school-wide initiatives while strengthening leadership,
-          teamwork, and communication skills.
-        </p>
+        <div class="card-photo">
+          <img src="tiongnam.jpg" alt="Tiong Nam Internship">
+        </div>
+        <div class="card-title">Intern – Tiong Nam Logistic Solutions</div>
+        <div class="card-subtitle">2025</div>
+        <div class="card-description">
+          Assisted the IT Hardware Department with system maintenance and support.
+          <ul>
+            <li>Troubleshooting computers and network devices</li>
+            <li>Updating IT inventory documentation</li>
+            <li>System upgrades and configuration</li>
+            <li>Technical support for staff</li>
+          </ul>
+        </div>
       </div>
 
       <div class="card">
-        <h3>Best Photographer Award</h3>
-        <small>2024 – Present</small>
-        <p>
-          Recognized for producing high-quality photography for school projects and events,
-          demonstrating creativity, technical proficiency, and strong visual storytelling.
-        </p>
+        <div class="card-photo">
+          <img src="legoland.jpg" alt="Legoland Cafe">
+        </div>
+        <div class="card-title">Part Time – Legoland Cafe</div>
+        <div class="card-subtitle">2023</div>
+        <div class="card-description">
+          Customer service and café operations.
+          <ul>
+            <li>Order handling</li>
+            <li>Food & beverage preparation</li>
+            <li>Cleanliness maintenance</li>
+            <li>Team collaboration</li>
+          </ul>
+        </div>
       </div>
 
       <div class="card">
-        <h3>Kawad Kaki State Level Competition</h3>
-        <small>2024</small>
-        <p>
-          Represented the school at state level, showcasing discipline, teamwork, and precision
-          through intensive training and competitive performance.
-        </p>
+        <div class="card-photo">
+          <img src="pizza.jpg" alt="Pizza Hut">
+        </div>
+        <div class="card-title">Part Time – Pizza Hut</div>
+        <div class="card-subtitle">2023 – Present</div>
+        <div class="card-description">
+          Fast-paced restaurant operations.
+          <ul>
+            <li>Customer service</li>
+            <li>Kitchen support</li>
+            <li>Hygiene standards</li>
+            <li>Teamwork under pressure</li>
+          </ul>
+        </div>
       </div>
 
       <div class="card">
-        <h3>Organized Event</h3>
-        <small>2024</small>
-        <p>
-          Planned and executed a successful Hari Raya school celebration, managing logistics,
-          coordination, and program flow while ensuring a positive participant experience.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Perkom-Kor Competition</h3>
-        <small>2024</small>
-        <p>
-          Participated as part of the school team and achieved 1st place through discipline,
-          coordination, and effective teamwork under competitive conditions.
-        </p>
+        <div class="card-photo">
+          <img src="keytatoes.jpg" alt="Keytatoes Event">
+        </div>
+        <div class="card-title">Keytatoes Vendor (Event)</div>
+        <div class="card-subtitle">2024</div>
+        <div class="card-description">
+          Event booth management.
+          <ul>
+            <li>Sales & inventory</li>
+            <li>Customer interaction</li>
+            <li>Booth setup</li>
+            <li>Event coordination</li>
+          </ul>
+        </div>
       </div>
 
     </div>
@@ -231,7 +280,7 @@
 </section>
 
 <div class="spotify-player">
-  <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX4WYpdgoIcn6" height="80"></iframe>
+  <iframe src="https://open.spotify.com/embed/track/3be9ACTxtcL6Zm4vJRUiPG?autoplay=1"></iframe>
 </div>
 
 <footer>
