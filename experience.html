@@ -3,180 +3,76 @@
 <head>
   <meta charset="UTF-8">
   <title>Experience | Putra Azren</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 
   <style>
     /* ===============================
-       RESET
+       MATCH ACHIEVEMENTS PAGE EXACTLY
     =============================== */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+
+    /* SECTION SPACING (same as achievements) */
+    .section {
+      padding-top: 140px;
+      padding-bottom: 140px;
     }
 
-    body {
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: #050a19 url("images/background.jpg") center / cover fixed;
-      color: #ffffff;
-      padding-bottom: 130px; /* Spotify space */
-    }
-
-    /* ===============================
-       HEADER (MATCH ACHIEVEMENTS)
-    =============================== */
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 90px;
-      padding: 0 8%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: linear-gradient(
-        to bottom,
-        rgba(5, 10, 25, 0.95),
-        rgba(5, 10, 25, 0.75)
-      );
-      backdrop-filter: blur(10px);
-      z-index: 1000;
-    }
-
-    .logo {
-      font-size: 26px;
-      font-weight: 700;
-      color: #4fd2ff;
-      letter-spacing: 1px;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 28px;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: #e5ecf5;
-      font-size: 15px;
-      transition: color 0.3s ease;
-    }
-
-    nav ul li a:hover,
-    nav ul li a.active {
-      color: #4fd2ff;
-    }
-
-    /* ===============================
-       MAIN SECTION (SAME AS ACHIEVEMENTS)
-    =============================== */
-    .content-section {
-      padding: 150px 8% 120px;
-    }
-
-    .section-title {
-      font-size: 42px;
-      color: #4fd2ff;
-      margin-bottom: 60px;
-    }
-
-    /* ===============================
-       CARD GRID (IDENTICAL)
-    =============================== */
-    .cards-grid {
+    /* CARDS GRID (UNCHANGED, SAME AS YOUR CODE) */
+    .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 40px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
     }
 
-    .info-card {
-      background: linear-gradient(
-        135deg,
-        rgba(20, 40, 70, 0.75),
-        rgba(10, 25, 50, 0.85)
-      );
-      backdrop-filter: blur(12px);
-      border-radius: 22px;
-      padding: 30px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
-      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    .cards .card {
+      background: linear-gradient(145deg, #136386be, #0f152b);
+      padding: 26px;
+      border-radius: 14px;
+      border: 1px solid rgba(42, 208, 255, 0.18);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+      transition: 0.35s ease;
+      cursor: pointer;
     }
 
-    .info-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+    .cards .card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 0 20px rgba(0, 255, 200, 0.6);
+      background: #890808;
+      border-color: var(--accent);
     }
 
-    .card-logo {
-      width: 100%;
-      height: 140px;
-      object-fit: contain;
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: 16px;
-      padding: 20px;
-      margin-bottom: 22px;
+    /* SPOTIFY SAME POSITION & SPACE AS ACHIEVEMENTS */
+    body {
+      padding-bottom: 120px;
     }
 
-    .info-card h3 {
-      font-size: 20px;
-      margin-bottom: 6px;
-    }
-
-    .card-year {
-      font-size: 14px;
-      color: #7ddfff;
-      display: block;
-      margin-bottom: 16px;
-    }
-
-    .info-card p {
-      color: #cfd8e3;
-      line-height: 1.7;
-      margin-bottom: 16px;
-    }
-
-    .info-card ul {
-      padding-left: 18px;
-    }
-
-    .info-card ul li {
-      color: #cfd8e3;
-      margin-bottom: 8px;
-    }
-
-    /* ===============================
-       SPOTIFY PLAYER
-    =============================== */
     .spotify-player {
       position: fixed;
       bottom: 0;
       left: 0;
       width: 100%;
-      height: 90px;
-      background: #1c2a38;
-      display: flex;
-      align-items: center;
-      padding: 0 20px;
+      background: #0a0f1c;
+      padding: 10px 20px;
       z-index: 999;
+      box-shadow: 0 -6px 20px rgba(0,0,0,0.6);
     }
 
     .spotify-player iframe {
-      border: none;
       width: 100%;
-      height: 100%;
+      height: 80px;
+      border: none;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="logo">PUTRA AZREN</div>
+<!-- HEADER (NO CHANGE – SAME AS ACHIEVEMENTS) -->
+<header>
+  <div class="container header-content">
+    <h1 class="logo">PUTRA AZREN</h1>
     <nav>
-      <ul>
+      <ul class="nav-list">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="education.html">Education</a></li>
@@ -186,69 +82,44 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
-  </header>
+  </div>
+</header>
 
-  <!-- EXPERIENCE SECTION -->
-  <section class="content-section">
-    <h2 class="section-title">Work Experience</h2>
+<!-- EXPERIENCE SECTION -->
+<section class="section">
+  <div class="container">
+    <h2 class="fade-in">Work Experience</h2>
 
-    <div class="cards-grid">
+    <div class="cards">
 
-      <div class="info-card">
-        <img src="images/tiong-nam.png" class="card-logo" alt="Tiong Nam">
+      <div class="card slide-up">
         <h3>Intern – Tiong Nam Logistic Solutions</h3>
-        <span class="card-year">2025</span>
-        <p>
-          Assisted the IT Hardware Department with maintenance, troubleshooting,
-          and technical support to ensure smooth daily operations.
-        </p>
-        <ul>
-          <li>Troubleshooting computers and network devices</li>
-          <li>Updating IT inventory documentation</li>
-          <li>System upgrades and configuration</li>
-          <li>Technical support for staff</li>
-        </ul>
+        <small>2025</small>
+        <p>Assisted the IT Hardware Department with maintenance and technical support.</p>
       </div>
 
-      <div class="info-card">
-        <img src="images/legoland.png" class="card-logo" alt="Legoland">
+      <div class="card slide-up">
         <h3>Part Time – Legoland Café</h3>
-        <span class="card-year">2023</span>
-        <p>
-          Provided customer service and café operations in a fast-paced
-          theme park environment.
-        </p>
-        <ul>
-          <li>Order handling</li>
-          <li>Food and beverage preparation</li>
-          <li>Cleanliness maintenance</li>
-          <li>Team collaboration</li>
-        </ul>
+        <small>2023</small>
+        <p>Handled customer service and café operations in a high-traffic environment.</p>
       </div>
 
-      <div class="info-card">
-        <img src="images/pizzahut.png" class="card-logo" alt="Pizza Hut">
+      <div class="card slide-up">
         <h3>Part Time – Pizza Hut</h3>
-        <span class="card-year">2023 – Present</span>
-        <p>
-          Worked in a high-pressure restaurant environment while maintaining
-          service quality and hygiene standards.
-        </p>
-        <ul>
-          <li>Customer service</li>
-          <li>Kitchen support</li>
-          <li>Hygiene standards</li>
-          <li>Teamwork under pressure</li>
-        </ul>
+        <small>2023 – Present</small>
+        <p>Worked in fast-paced restaurant operations while maintaining service quality.</p>
       </div>
 
     </div>
-  </section>
-
-  <!-- SPOTIFY -->
-  <div class="spotify-player">
-    <iframe src="https://open.spotify.com/embed/track/6dOtVTDdiauQNBQEDOtlAB?utm_source=generator"></iframe>
   </div>
+</section>
+
+<!-- SPOTIFY PLAYER -->
+<div class="spotify-player">
+  <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX4WYpdgoIcn6?utm_source=generator"
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+  </iframe>
+</div>
 
 </body>
 </html>
