@@ -1053,3 +1053,27 @@ input:focus, textarea:focus {
   color: #e8eaf1;
   font-size: 0.95rem;
 }
+
+.time-date-container {
+      position: fixed;
+      bottom: 100px; /* above Spotify player */
+      right: 20px;
+      background: rgba(10, 15, 28, 0.9);
+      color: #2ad0ff;
+      font-family: 'Courier New', Courier, monospace;
+      font-weight: bold;
+      padding: 12px 18px;
+      border-radius: 12px;
+      box-shadow: 0 4px 18px rgba(0, 255, 200, 0.5);
+      text-align: center;
+      z-index: 999;
+    }
+
+    .time-date-container span {
+      display: block;
+      font-size: 1rem;
+    }
+
+    .time-date-container .time {
+      font-size: 1.2rem;
+    }
