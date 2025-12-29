@@ -3,192 +3,108 @@
 <head>
   <meta charset="UTF-8">
   <title>Experience | Putra Azren</title>
+  <link rel="stylesheet" href="style.css">
 
   <style>
-    body {
-      font-family: "Inter", "Poppins", sans-serif;
-      background: url('background.jpg') center/cover fixed;
-      color: white;
-      margin: 0;
+    /* ===============================
+       MATCH ACHIEVEMENTS PAGE EXACTLY
+    =============================== */
+
+    /* SECTION SPACING (same as achievements) */
+    .section {
+      padding-top: 140px;
+      padding-bottom: 140px;
     }
 
-    .container {
-      width: 92%;
-      max-width: 1140px;
-      margin: auto;
-    }
-
-    /* ================= HEADER ================= */
-    header {
-      background: rgba(14, 20, 46, 0.75);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(42, 208, 255, 0.2);
-      position: sticky;
-      top: 0;
-      z-index: 999;
-      padding: 16px 0;
-    }
-
-    .header-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      color: #2ad0ff;
-      font-size: 1.6rem;
-      font-weight: 700;
-    }
-
-    .nav-list {
-      list-style: none;
-      display: flex;
-      gap: 28px;
-      padding: 0;
-      margin: 0;
-    }
-
-    .nav-list a {
-      text-decoration: none;
-      color: #e8eaf1;
-      font-weight: 500;
-    }
-
-    .nav-list a:hover,
-    .nav-list a.active {
-      color: #2ad0ff;
-      font-weight: 700;
-    }
-
-    /* ================= SECTION ================= */
-    h2 {
-      font-size: 2.3rem;
-      margin: 40px 0 26px;
-      color: #2ad0ff;
-    }
-
-    /* ================= CARDS ================= */
+    /* CARDS GRID (UNCHANGED, SAME AS YOUR CODE) */
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 25px;
-      margin-bottom: 40px;
+      margin-top: 30px;
     }
 
-    .card {
+    .cards .card {
       background: linear-gradient(145deg, #136386be, #0f152b);
-      padding: 20px;
-      border-radius: 16px;
+      padding: 26px;
+      border-radius: 14px;
       border: 1px solid rgba(42, 208, 255, 0.18);
       box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: 0.35s ease;
+      cursor: pointer;
     }
 
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 0 22px rgba(42, 208, 255, 0.6);
+    .cards .card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 0 20px rgba(0, 255, 200, 0.6);
+      background: #890808;
+      border-color: var(--accent);
     }
 
-    /* ================= PHOTO FRAME ================= */
-    .card-photo {
-      width: 100%;
-      height: 180px;
-      margin-bottom: 14px;
-      border-radius: 12px;
-      overflow: hidden;
-      border: 2px solid rgba(42, 208, 255, 0.35);
-      box-shadow: 0 0 18px rgba(42, 208, 255, 0.25);
-      background: linear-gradient(135deg, #0f152b, #136386);
-    }
+    /* ===============================
+   EXPERIENCE CARD PHOTO FRAME
+   MATCH ACHIEVEMENTS STYLE
+================================ */
 
-    .card-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: brightness(0.9);
-      transition: transform 0.4s ease, filter 0.4s ease;
-    }
+.card-photo {
+  width: 100%;
+  height: 150px;                 /* SAME visual weight as Achievements */
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 16px;
 
-    .card:hover .card-photo img {
-      transform: scale(1.05);
-      filter: brightness(1);
-    }
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(0, 0, 0, 0.25)
+  );
 
-    /* ================= TEXT ================= */
-    .card-title {
-      color: #2ad0ff;
-      font-weight: 700;
-      font-size: 1.1rem;
-      margin-bottom: 6px;
-    }
-
-    .card-subtitle {
-      color: #9aa4b2;
-      font-size: 0.9rem;
-      margin-bottom: 10px;
-    }
-
-    .card-description {
-      color: #e0f7ff;
-      line-height: 1.6;
-      font-size: 0.95rem;
-    }
-
-    .card-description ul {
-      padding-left: 18px;
-      margin-top: 8px;
-    }
-
-    .card-description li {
-      margin-bottom: 6px;
-    }
-
-    .card {
-  background: linear-gradient(145deg, #136386be, #0f152b);
-  padding: 20px;
-  border-radius: 14px;
-  border: 1px solid rgba(42, 208, 255, 0.18);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  border: 1px solid rgba(42, 208, 255, 0.25);
+  box-shadow: inset 0 0 18px rgba(0, 0, 0, 0.5);
 }
 
-.card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 0 20px rgba(0, 255, 200, 0.6);
-  background: #890808;
+/* Image inside frame */
+.card-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;          /* LOGO-STYLE like Achievements */
+  padding: 18px;
+  transition: transform 0.35s ease;
+}
+
+/* Slight zoom on hover (same feeling as Achievements) */
+.card:hover .card-photo img {
+  transform: scale(1.05);
 }
 
 
-    /* ================= SPOTIFY ================= */
+    /* SPOTIFY SAME POSITION & SPACE AS ACHIEVEMENTS */
+    body {
+      padding-bottom: 120px;
+    }
+
     .spotify-player {
       position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 300px;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: #0a0f1c;
+      padding: 10px 20px;
       z-index: 999;
+      box-shadow: 0 -6px 20px rgba(0,0,0,0.6);
     }
 
     .spotify-player iframe {
       width: 100%;
-      border-radius: 12px;
+      height: 80px;
       border: none;
-    }
-
-    /* ================= FOOTER ================= */
-    footer {
-      background: #060a18;
-      text-align: center;
-      padding: 30px 0;
-      border-top: 1px solid rgba(42, 208, 255, 0.15);
-      color: #9aa4b2;
-      font-size: 0.9rem;
     }
   </style>
 </head>
 
 <body>
 
+<!-- HEADER (NO CHANGE – SAME AS ACHIEVEMENTS) -->
 <header>
   <div class="container header-content">
     <h1 class="logo">PUTRA AZREN</h1>
@@ -206,13 +122,14 @@
   </div>
 </header>
 
-<section>
+<!-- EXPERIENCE SECTION -->
+<section class="section">
   <div class="container">
-    <h2>Work Experience</h2>
+    <h2 class="fade-in">Work Experience</h2>
 
     <div class="cards">
 
-      <div class="card">
+     <div class="card">
         <div class="card-photo">
           <img src="tiongnam.jpg" alt="Tiong Nam Internship">
         </div>
@@ -251,7 +168,7 @@
           <img src="pizza.jpg" alt="Pizza Hut">
         </div>
         <div class="card-title">Part Time – Pizza Hut</div>
-        <div class="card-subtitle">2023 – Present</div>
+        <div class="card-subtitle">2023</div>
         <div class="card-description">
           Fast-paced restaurant operations.
           <ul>
@@ -279,19 +196,22 @@
           </ul>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
+<!-- SPOTIFY PLAYER -->
 <div class="spotify-player">
-  <iframe src="https://open.spotify.com/embed/track/3be9ACTxtcL6Zm4vJRUiPG?autoplay=1"></iframe>
+  <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX4WYpdgoIcn6?utm_source=generator"
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+  </iframe>
 </div>
-
-<footer>
-  &copy; 2025 Putra Azren. All rights reserved.
-</footer>
 
 </body>
 </html>
+- this too
+
+
+
+
 
