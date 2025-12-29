@@ -102,14 +102,28 @@
       margin-bottom: 6px;
     }
 
-    .spotify-player {
+   .spotify-player {
   position: fixed;
-  bottom: 0;
+  bottom: 0;             
   left: 0;
-  width: 100%;
-  z-index: 9999;
-  background: #070b17;
-  border-top: 1px solid rgba(42, 208, 255, 0.2);
+  width: 100%;            
+  z-index: 9999;          
+  background: #070b17;    
+  border-top: 1px solid rgba(42, 208, 255, 0.2); 
+  padding: 8px 0;         
+}
+
+.spotify-player iframe {
+  width: 100%;             
+  border: none;            
+  border-radius: 8px;      
+  height: 80px;            
+}
+
+
+.spotify-player:hover {
+  box-shadow: 0 -4px 15px rgba(42, 208, 255, 0.5);
+  transition: box-shadow 0.3s ease;
 }
   </style>
 </head>
@@ -239,6 +253,7 @@
 
 </body>
 </html>
+
 
 
 
